@@ -1,0 +1,718 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+body{
+    min-height: 100%;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+nav{
+    background: rgb(237, 178, 48);
+    height: 18vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+nav .logo{
+    height: 100%;
+}
+nav .logo img{
+    height: 100%;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+    color: rgb(16, 62, 224);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+.banner{
+    max-width: max-content;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(237, 178, 48);
+    height: 82vh;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.banner-img{
+    width: auto;
+}
+.banner-img img{
+    height: 82vh;
+}
+.banner-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.banner-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(16, 62, 224);
+    font-size: 54px;
+    letter-spacing: 22.5%;
+    font-family: 'Fabada';
+    font-style: normal;
+    font-size: 54px;
+    line-height: 72px;
+    text-align: center;
+    letter-spacing: 0.225em;
+}
+.banner-desc-details{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Josefin Sans';
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.07em;
+    margin: 0 20 0 20;
+}
+
+/* Courses Card */
+.courses{
+    width: 100vw;
+    min-height: 80vh;
+    position: relative;
+}
+.courses ul{
+    margin: 50px;
+    padding: 50px;
+    list-style: none;
+}
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 0.2s opacity ease-in-out;
+    transition-delay: 0.2s;
+}
+.slide img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.slide[data-active]{
+    z-index: 1;
+    opacity: 1;
+    transition-delay: 0s;
+}
+.card-button{
+    position: absolute;
+    margin-top: -165px;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 0 0.5rem;
+    background-color: rgba(103, 103, 103, 0.2);
+}
+.card-button:hover, .carousel-button:focus{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.card-button:focus{
+    outline: 1px solid black;
+}
+.card-button.prev{
+    left: 1rem;
+}
+.card-button.next{
+    right: 1rem;
+}
+/* Courses Card Container */
+.display_course {
+    display:grid;
+    height: fit-content;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 180px;
+}
+
+.display_course_box { 
+    width: 1024px;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(237, 178, 48);
+    display: flex;
+    flex-direction: row;
+    /* padding: 32px; */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.course_text_container {
+    width:55%;
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.course_name {
+    margin-bottom: 10px;
+    font-size: 44px;
+}
+
+.course_desc{
+    margin-bottom: 10px;
+    transform: translateY(45%);
+    font-size:28px;
+}
+
+.course_photo_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.course_photo_container img {
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+/* Schedule */
+.schedule-up{
+    margin-top: -300px;
+}
+
+.schedule{
+    width: 80%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+}
+.schedule-hour{
+    background: white;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.schedule ul{
+    display: flex;
+    justify-content: space-around;
+}
+.schedule li{
+    list-style: none;
+    font-size: 25px;
+}
+.schedule h1{
+    font-size: 50px;
+    font-weight: 2000;
+}
+.schedule p {
+    font-size: 25px;
+}
+.schedule div{
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.schedule div h1{
+    font-family: 'fabada';
+    padding: 10px;
+}
+.monday{
+    background-color: #EFCB7C;
+}
+.tuesday{
+    background-color: #7792F1;
+}
+.wednesday{
+    background-color: #6EF9A5;
+}
+
+/* Discount Banner */
+.discount{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 120px;
+}
+
+/* FORM */
+#title_font {
+    font-family: 'fabada';
+}
+
+#form{
+    max-width: 550px;
+    width: 80%;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    margin: 17vh auto 0 auto;
+    padding: 40px;
+    border: 1px solid rgba(223, 223, 223, 0.5);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+#form h1{    
+    margin-top: 20px;
+    margin-bottom: 5vh;
+    font-size: 40px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin: 12px 0;
+}
+
+.radio{
+    display: inline-flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.radio .female{
+    width: 20px;
+    cursor: pointer;
+}
+
+.radio .male{
+    width: 15px;
+    cursor: pointer;
+}
+
+.agreement{
+    display: inline-flex;
+    align-items: center;
+}
+
+.agreement .tnccheckbox{
+    width: 20px;
+    cursor: pointer;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid #D3D3D3;
+}
+
+input[type="text"]:focus, textarea:focus{
+    border-bottom: 1px solid rgb(70, 124, 231);
+}
+
+input[type="submit"]{
+    margin-top: 20px;
+    width: 100%;
+    height: 35px;
+    max-width: 600px;
+    font-family: 'fabada';
+    font-weight: 900;
+    background: #103EE0;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 15px;
+    align-items: center;
+}
+
+.error{
+    color: red;
+}
+
+.error-border{
+    border-bottom: 1px solid red;
+}
+
+#success{
+    margin-top: 2vh;
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 150, 0);
+}
+
+/* ini flexbox biar input nama bisa bersebelahan (pake id = "")*/
+#input-gridbox {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+#course-input {
+    height: 25px;
+    width: 50%;
+}
+
+/* Style Will */
+.section_heading {
+    margin-top: 150px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Fabada';
+    font-style: bold;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.sh_deeper {
+    margin-bottom: 50px;
+}
+
+.section_subheading {
+    text-align: center;
+    margin-bottom: 80px;
+    font-family: 'Fabada';
+}
+
+.section_subheading a {
+    color: #103EE0;
+    font-family: 'Fabada';
+}
+
+.display_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display_online_instructor {
+    display:grid;
+    height: fit-content;
+    grid-template-columns: 700px 700px;
+    margin-bottom: 180px;
+}
+
+.display_online_instructor_box { 
+    width: 610px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #CBF1FE;
+    display: flex;
+    flex-direction: row;
+    padding: 32px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.display_online_instructor_box_text {
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.instructor_name {
+    margin-bottom: 10px;
+    font-size: 54px;
+}
+
+.instructor_desc1{
+    margin-bottom: 10px;
+    font-size:28px;
+}
+
+.instructor_desc2{
+    font-size: 18px;
+}
+
+.instructor_photo_container {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.instructor_photo_container img {
+    width: 100%;
+}
+
+/* Testimony */
+.testimony{
+    margin-top: -150px;
+}
+
+.testimony_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimony_holder_double {
+    display:grid;
+    height: fit-content;
+    grid-template-columns: 700px 700px;
+    margin-bottom: 20px;
+}
+
+.testimony_box {
+    width: 610px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #3ECC7E;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.tb_wider {
+    width: 800px;
+}
+
+.testimony_quote_icon {
+    width: 94px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.testimony_text {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.testimony_author {
+    margin-top: auto;
+    text-align: right;
+    font-size: 32px;
+}
+
+/* aboutus */
+.aboutus{
+    text-align: center;
+    justify-content: center;
+    padding: 100px 100px;
+}
+.aboutus-details{
+    font-family: 'Josefin Sans';
+    font-size: 28px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.07em;
+}
+
+/* footer */
+.footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(237, 178, 48);
+    width: 100%;
+    padding: 70px;
+}
+.footer-logo img{
+    height: 190px;
+    width: 190px;
+}
+
+.contact-information{
+    font-family: 'fabada';
+    font-size: 28px;
+}
+.contact-details{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:10px 0 15px 0;
+}
+.contact-details img {
+    margin-right: 10px;
+    transform: translateY(40%);
+}
+.contact-details a{
+    font-family: 'fabada';
+    text-decoration: none;
+    color: black;
+}
+.contact-details li {
+    margin-right: 40px;
+}
+.footer-links{
+    justify-content: space-around;
+    width: auto;
+}
+.footer_center{
+    margin-top: 40px;
+}
+.footer-links li{
+    list-style: none;
+}
+.footer-links a{
+    color: rgb(16, 62, 224);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+@media(max-width: 1350px){
+    .testimony_box {
+        width: 480px;
+        height: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #3ECC7E;
+        display: flex;
+        flex-direction: column;
+        padding: 32px;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    }
+    .tb_wider {
+        width: 800px;
+    }
+    .testimony_quote_icon {
+        width: 64px;
+        height: 42px;
+        margin-bottom: 10px;
+    }
+    
+    .testimony_text {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    
+    .testimony_author {
+        margin-top: auto;
+        text-align: right;
+        font-size: 32px;
+    }
+
+    .display_online_instructor_box { 
+        width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #CBF1FE;
+        display: flex;
+        flex-direction: row;
+        padding: 32px;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .display_online_instructor_box_text {
+        width:70%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .instructor_name {
+        margin-bottom: 10px;
+        font-size: 54px;
+    }
+    
+    .instructor_desc1{
+        margin-bottom: 10px;
+        font-size:28px;
+    }
+    
+    .instructor_desc2{
+        font-size: 18px;
+    }
+    
+    .instructor_photo_container {
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media(max-width: 940px){
+    .testimony_box {
+        width: 320px;
+        height: 180px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #3ECC7E;
+        display: flex;
+        flex-direction: column;
+        padding: 32px;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    }
+    .tb_wider {
+        width: 420px;
+    }
+    .testimony_quote_icon {
+        width: 32px;
+        height: 20px;
+        margin-bottom: 4px;
+    }
+    
+    .testimony_text {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+    
+    .testimony_author {
+        margin-top: auto;
+        text-align: right;
+        font-size: 12px;
+    }
+
+    .display_online_instructor_box { 
+        width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #CBF1FE;
+        display: flex;
+        flex-direction: row;
+        padding: 18px;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .display_online_instructor_box_text {
+        width:70%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .instructor_name {
+        margin-bottom: 4px;
+        font-size: 32px;
+    }
+    
+    .instructor_desc1{
+        margin-bottom: 4px;
+        font-size:18px;
+    }
+    
+    .instructor_desc2{
+        font-size: 12px;
+    }
+    
+    .instructor_photo_container {
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
